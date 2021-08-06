@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruits | Responsive Website Landing Page</title>
+    <link rel="stylesheet" href="Task1.css">
+</head>
+<body>
+    <section>
+        <div class="bg"></div>
+        <header>
+            <a href="#" class="logo">Fruits</a>
+            <div class="toggle"></div>
+            <ul class="navigation">
+               <li><a href="#" class="active">Home</a></li>
+               <li><a href="#">Menu</a></li>
+               <li><a href="#">what's new</a></li>
+               <li><a href="#">Contact</a></li>
+            </ul>
+        </header>
+        <div class="content">
+            <div class="textBox">
+                <h2>Eat fresh Everyday</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum dicta itaque quidem qui libero. Qui, consequuntur. Quo distinctio et sunt inventore repellat consequatur dignissimos, veritatis quam voluptatem amet ab ipsum odit mollitia recusandae tempore expedita, ex labore, consequuntur ut quos!</p>
+                <a href="#">Learn More</a>
+            </div>
+            <div class="imgBox">
+                <img src="https://i2.wp.com/ceklog.kindel.com/wp-content/uploads/2013/02/firefox_2018-07-10_07-50-11.png?fit=641%2C618&ssl=1" class="fruits">
+            </div>
+        </div>
+        <ul class="thumb">
+            <!-- The images used below might be subject to copyright, they can be changed according to the requirements -->
+            <li data-text="Apple"><img src="https://i2.wp.com/ceklog.kindel.com/wp-content/uploads/2013/02/firefox_2018-07-10_07-50-11.png?fit=641%2C618&ssl=1" height=50, width=50 onclick="imgSlider('https://i2.wp.com/ceklog.kindel.com/wp-content/uploads/2013/02/firefox_2018-07-10_07-50-11.png?fit=641%2C618&ssl=1');changeBgColor('#fc4a55')"></li>
+            <li data-text="Mango"><img src="https://images.hindustantimes.com/img/2021/06/02/1600x900/9a156550-c367-11eb-9d53-2d5cae187b44_1622619423185.jpg" height=50, width=50 onclick="imgSlider('https://images.hindustantimes.com/img/2021/06/02/1600x900/9a156550-c367-11eb-9d53-2d5cae187b44_1622619423185.jpg');changeBgColor('#ffcc02')"></li>
+            <li data-text="Watermelon"><img src="https://solidstarts.com/wp-content/uploads/when-can-babies-eat-watermelon.jpg" height=50 width=50 onclick="imgSlider('https://solidstarts.com/wp-content/uploads/when-can-babies-eat-watermelon.jpg');changeBgColor('#92ba3c')"></li>
+            <li data-text="Dragon Fruits"><img src="https://m.media-amazon.com/images/I/41xSpZeo39L.jpg" height=50, width=50 onclick="imgSlider('https://m.media-amazon.com/images/I/41xSpZeo39L.jpg');changeBgColor('#fb6cb2')"></li>
+            <li data-text="Pineapple"><img src="https://www.jiomart.com/images/product/original/590000070/pineapple-queen-1-pc-0-20201119.jpg" height=50, width=50 onclick="imgSlider('https://www.jiomart.com/images/product/original/590000070/pineapple-queen-1-pc-0-20201119.jpg');changeBgColor('#ffb42b')"></li>
+        </ul>
+
+        <ul class="sci">
+            <li><a href="#"><img src="https://facebookbrand.com/wp-content/uploads/2019/04/f_logo_RGB-Hex-Blue_512.png?w=512&h=512" height=50, width=50></a></li>
+            <li><a href="#"><img src="https://i.pinimg.com/474x/21/29/59/212959f2ca79435e4a6b338f69a9efbc--twitter-icon-twitter-app.jpg" height=50, width=50></a></li>
+            <li><a href="#"><img src="https://workingwithdog.com/wp-content/uploads/2016/05/new_instagram_logo-1024x1024.jpg" height=50, width=50></a></li>
+        </ul>
+    </section>
+    <script>
+
+        let menuToggle= document.querySelector('.toggle');
+        let navigation= document.querySelector('.navigation');
+        menuToggle.onclick= function(){
+            menuToggle.classList.toggle('active');
+            navigation.classList.toggle('active');
+        }
+
+        function imgSlider(anything){
+            document.querySelector('.fruits').src= anything;
+        }
+
+        function changeBgColor(color){
+            const bg= document.querySelector('.bg');
+            bg.style.background = color;
+        }
+
+
+        let el= document.querySelectorAll('.thumb li');
+        for (let i=0; i<el.length; i++)
+        {
+            el[i].onclick = function(){
+                var c=0;
+                while (c<el.length){
+                    el[c++].className = 'check';
+                }
+                el[i].className ='check active';
+            }
+        }
+    </script>
+    
+</body>
+</html>
